@@ -2,6 +2,10 @@
 
 Flask + SQLAlchemy REST API for a simple blog technical test.
 
+## Public Repository
+
+- GitHub: `https://github.com/williamivuni-prog/leesee-blog-backend`
+
 ## Features
 
 - REST endpoints for listing, reading, creating, updating, and deleting posts
@@ -55,9 +59,9 @@ heroku run python -m app.seed
 
 ## Deployment URL
 
-Replace this after deployment:
-
-- Backend: `https://your-backend-app.herokuapp.com`
+- Backend: `https://backend-eight-green-11.vercel.app`
+- Health check: `https://backend-eight-green-11.vercel.app/api/health`
+- Posts API: `https://backend-eight-green-11.vercel.app/api/posts`
 
 ## Deploy To Vercel
 
