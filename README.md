@@ -1,21 +1,22 @@
 # Leesee Blog Backend
 
-Flask + SQLAlchemy REST API for a simple blog technical test.
+This is the backend part of my Leesee technical test. I made it with Flask and SQLAlchemy, and it works as a small REST API for the blog frontend.
 
 ## Public Repository
 
 - GitHub: `https://github.com/williamivuni-prog/leesee-blog-backend`
 
-## Features
+## What I Built
 
-- REST endpoints for listing, reading, creating, updating, and deleting posts
+- API routes for listing, reading, creating, updating, and deleting posts
+- A SQLAlchemy `Post` model
 - SQLite for local development
-- `DATABASE_URL` support for PostgreSQL-compatible cloud databases
-- CORS configuration for the deployed frontend
-- Pytest unit tests
-- Heroku-ready `Procfile`
+- Support for `DATABASE_URL` if a PostgreSQL database is added later
+- CORS setup so the deployed frontend can call the API
+- Seed data so the demo has posts right away
+- Unit tests with pytest
 
-## Local Setup
+## How To Run It Locally
 
 ```bash
 python -m venv .venv
@@ -25,7 +26,7 @@ python -m app.seed
 flask --app run run --debug
 ```
 
-The API will run at `http://localhost:5000`.
+The API runs at `http://localhost:5000`.
 
 ## API Routes
 
@@ -42,7 +43,7 @@ The API will run at `http://localhost:5000`.
 pytest
 ```
 
-## Deploy To Heroku
+## Heroku Option
 
 ```bash
 heroku create leesee-blog-api
@@ -57,18 +58,18 @@ After deployment, seed sample data if desired:
 heroku run python -m app.seed
 ```
 
-## Deployment URL
+## Links
 
 - Backend: `https://backend-eight-green-11.vercel.app`
 - Health check: `https://backend-eight-green-11.vercel.app/api/health`
 - Posts API: `https://backend-eight-green-11.vercel.app/api/posts`
 
-## Deploy To Vercel
+## Vercel Deployment
 
-This repository also includes `api/index.py` and `vercel.json`, so it can run as a Vercel Python Function:
+I deployed this backend on Vercel as a Python Function. The repo includes `api/index.py` and `vercel.json` for that.
 
 ```bash
 vercel deploy --prod
 ```
 
-For a production database, add a PostgreSQL `DATABASE_URL`. Without one, the Vercel deployment uses SQLite in `/tmp`, which is enough for a live demo but not durable storage.
+For a real production app, I would add a PostgreSQL `DATABASE_URL`. For this test/demo, the deployed version uses SQLite in `/tmp`, which is enough to show the app working but is not meant for permanent data.
